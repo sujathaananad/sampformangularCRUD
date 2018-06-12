@@ -1,0 +1,73 @@
+<div class="row ">
+    <div class="col s8 offset-s2">
+      <div class="card ">
+        <div class="sm-jumbotron center-align">  
+          <h2 class="text-center">Add User</h2>
+  <form name="EmpForm" action="" method="post" class="col.s12.white" #EmpForm="ngForm">
+    <div class="row" >
+        <div class="form-group  col-md-4"> 
+     <label>Id</label>      
+     <input type="number" class="form-control" name="id"  id="id"  [(ngModel)]="employee.id" #id="ngModel" required >
+      <div *ngIf="id.invalid && (id.dirty || id.touched)"
+     class="alert alert-danger">
+     <div *ngIf="id.errors.required">
+        id is required.
+      </div>
+     </div>
+     
+      </div>
+
+
+     
+      <div class="form-group  col-md-4">
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" id="name" [(ngModel)]="employee.name" required>
+    </div>
+   
+<div class="form-group  col-md-4">
+    <label>Age</label>
+    <input type="number" class="form-control" name="age" id="age" [(ngModel)]="employee.age" required>
+</div>
+</div>
+<div class="row" >
+<div class="form-group col-md-4">
+    <label>DOB</label>
+    <input type="text" class="form-control" name="dob" id="dob" [(ngModel)]="employee.dob" required>
+</div>
+<div class="form-group  col-md-4 ">
+    <label>degree</label>
+    <input type="text" class="form-control" name="degree" id="degree" [(ngModel)]="employee.degree" required>
+  </div>
+  <div class="form-group  col-md-4">
+    <label>department</label>
+    <input type="text" class="form-control" id="department" name="department" [(ngModel)]="employee.department" required>
+  </div>
+</div>
+<div class="row" >
+ <div class="form-group  col-md-4">
+        <label>grade</label>
+        <input type="text" class="form-control" name="grade" id="grade" [(ngModel)]="employee.grade" required>
+      </div>
+    </div>
+ <div class="row" >
+     </div>
+<div class="row" >
+<div class="form-group col-md-12 text-center">
+    <!-- login(EmpForm.value)-->
+ <button class="btn btn-default" (click)="openModal(template)" >Submit</button> 
+
+ <ng-template #template>
+    <div class="modal-body text-center">
+      <p>Record saved !</p>
+     <button type="button" class="btn-large btn-submit"  type="submit" (click)="login()" >Ok</button>
+    </div>
+  </ng-template>
+
+    </div>
+        </div>
+  
+  </form>
+        </div>
+      </div>
+      </div>
+    </div>

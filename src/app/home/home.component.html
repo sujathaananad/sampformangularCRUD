@@ -1,0 +1,52 @@
+<div class="col-md-6">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <h4>New Employee Register 
+         <!-- <a routerLink="emp" routerLinkActive="active" >here</a> -->
+        <button align="right" class="btn  btn-primary"  (click)="empform()" value="Add User">Add User</button>
+      </h4>
+    <h2> Emp Details</h2>
+    <table class="table table-striped">
+      <thead>
+          <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>age</th>
+          <th>dob</th>
+          <th>degree</th>
+          <th>department</th>
+          <th>grade</th>
+          <th>Edit</th>
+          <th>delete</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of empData">
+          <td>{{e.id}}</td>
+          <td>{{e.name}}</td>
+          <td>{{e.age}}</td>
+          <td>{{e.dob}}</td>
+          <td>{{e.degree}}</td>      
+           <td>{{e.department}}</td>     
+             <td>{{e.grade}}</td>
+   
+          <td> 
+            <button class="btn  btn-primary"  (click)="updateUser(e)" >Edit</button>
+            </td>
+            <td>
+            <button class="btn  btn-primary" (click)="openModal(template)"> Delete</button>
+          </td>
+            <!-- <button class="btn-large btn-danger" (click)="updateUser(e)" style="margin-left: 20px;"> Edit</button></td> -->
+
+            <ng-template #template>
+                <div class="modal-body text-center">
+                  <p>Do you want to confirm?</p>
+                 <button type="button" class="btn btn-default" (click)="  deleteUser(e)" >Yes</button>
+                <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+                </div>
+              </ng-template>
+            </tr> 
+      </tbody>
+            
+        </table>
+  </div>
